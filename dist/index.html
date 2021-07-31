@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWSOME -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script src="js/main.js" type="module"></script>
+    <title>Resposive Weather App</title>
+  </head>
+  <body>
+    <main class="fade-in">
+      <!-- SCREEN READER -->
+      <h1 class="offscreen">
+        Responsive Weather App Powered by the Open Weather A P I
+      </h1>
+      <!-- SECTION SEARCHBAR -->
+      <section id="searchBar" class="searchBar fade-in">
+        <form id="searchBar__form" class="searchBar__form" role="search">
+          <label for="searchBar__text" class="offscreen"
+            >Enter e new location</label
+          >
+          <input
+            id="searchBar__text"
+            class="searchBar__text"
+            type="text"
+            role="searchbox"
+            size="40"
+            autocomplete="off"
+            placeholder="City, State, Country"
+          />
+          <button
+            id="searchBar__button"
+            class="searchBar__button button"
+            title="Submit Location"
+            aria-label="Enter Zip Code or City, State, and Country to retrive weather conditions"
+          >
+            <i class="fas fa-search"></i
+            ><i class="fas fa-sync fa-spin none"></i>
+          </button>
+        </form>
+      </section>
+      <!-- SECTION CURRENT FORECAST -->
+      <a href="#currentForecast" class="skip-link"
+        >Skip to Current Conditions</a
+      >
+      <section
+        id="currentForecast"
+        class="currentForecast fade-in"
+        role="region"
+        aria-labelledby="currentForecast__location"
+      >
+        <h1 id="currentForecast__location" class="currentForecast__location">
+          Current Conditions
+        </h1>
+        <div
+          id="currentForecast__conditions"
+          class="currentForecast__conditions"
+        ></div>
+      </section>
+      <!-- SECTION NAVIGATION -->
+      <a href="#dailyForecast" class="skip-link">Skip to Six Day Forecast</a>
+      <nav id="navButtons" class="navButtons fade-in">
+        <button
+          id="getLocation"
+          class="button"
+          title="Get location"
+          aria-label="Get the current weather conditions for your current location"
+        >
+          <i class="fas fa-map-marker-alt"></i
+          ><i class="fas fa-sync fa-spin none"></i>
+        </button>
+        <button
+          id="home"
+          class="button"
+          title="Home Weather"
+          aria-label="Get the current weather conditions for your home location"
+        >
+          <i class="fas fa-home"></i><i class="fas fa-sync fa-spin none"></i>
+        </button>
+        <button
+          id="saveLocation"
+          class="button"
+          title="Save Location"
+          aria-label="Save the current weather location as your home location"
+        >
+          <i class="fas fa-save"></i><i class="fas fa-sync fa-spin none"></i>
+        </button>
+        <button
+          id="unit"
+          class="button"
+          title="Toggle Mesurement Units"
+          aria-label="Toggle between imperial and metric mesurement units"
+        >
+          <i class="fas fa-chart-bar"></i
+          ><i class="fas fa-sync fa-spin none"></i>
+        </button>
+        <button
+          id="refresh"
+          class="button"
+          title="Refresh Weather"
+          aria-label="Refrash the current weather conditions"
+        >
+          <i class="fas fa-sync-alt"></i
+          ><i class="fas fa-sync fa-spin none"></i>
+        </button>
+      </nav>
+      <hr fade-in />
+      <!-- SECTION DAILY FORECAST -->
+      <section
+        id="dailyForecast"
+        class="dailyForecast fade-in"
+        role="region"
+        aria-labelledby="dailyForecast__title"
+      >
+        <h1 id="dailyForecast__title" class="dailyForecast__title offscreen">
+          Six Day Forecast
+        </h1>
+        <div id="dailyForecast__contents" class="dailyForecast__contents"></div>
+      </section>
+      <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+  </body>
+</html>
