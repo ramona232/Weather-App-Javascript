@@ -139,7 +139,8 @@ const setBGImage = (weatherClass) => {
 const buildScreenReaderWeather = (weatherJson, locationObj) => {
   const location = locationObj.getName();
   const unit = locationObj.getUnit();
-  const tempUnit = unit === "imperial" ? "Fahrenheit" : "Celsius";
+const tempUnit = unit === "imperial" ? "Celsius" : "Fahrenheit";
+
   return `${weatherJson.current.weather[0].description} and ${Math.round(
     Number(weatherJson.current.temp)
   )}°${tempUnit} in ${location}`;
@@ -150,7 +151,7 @@ const setFocusOnSearch = () => {
 };
 
 const createCurrentConditionsDivs = (weatherObj, unit) => {
-  const tempUnit = unit === "imperial" ? "F" : "C";
+  const tempUnit = unit === "imperial" ? "C" : "F";
   const windUnit = unit === "imperial" ? "mph" : "m/s";
   const icon = createMainImgDiv(
     weatherObj.current.weather[0].icon,
