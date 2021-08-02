@@ -37,7 +37,7 @@ export const getWeatherFromCoords = async (locationObj) => {
    body: JSON.stringify(urlDataObj)
   });
 
-  const weatherJson = await weatherStreem.json();
+  const weatherJson = await weatherStream.json();
   return weatherJson;
  } catch (err) {
   console.error(err);
