@@ -32,10 +32,11 @@ export const getWeatherFromCoords = async (locationObj) => {
  };
 
  try {
-  const weatherStreem = await fetch('./.netlify/funcions/get_weather', {
-   method: 'POST',
+  const weatherStream = await fetch("./.netlify/functions/get_weather", {
+   method: "POST",
    body: JSON.stringify(urlDataObj)
   });
+
   const weatherJson = await weatherStreem.json();
   return weatherJson;
  } catch (err) {
